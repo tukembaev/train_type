@@ -1,36 +1,33 @@
-
 import { useTheme } from 'app/providers/ThemeProvider';
 import { useCallback, useEffect } from 'react';
 
-const importThemes = async (theme: string): Promise<void> => {
+const importThemes = async () => {
   try {
-    if (theme === 'layout_dark_theme') {
-      await import('app/styles/themes/dark.scss');
-    } else if (theme === 'layout_light_theme') {
-      await import('app/styles/themes/light.scss');
-    } else if (theme === 'layout_purpleish_theme') {
-      await import('app/styles/themes/purpleish.scss');
-    } else if (theme === 'layout_olive_theme') {
-      await import('app/styles/themes/olive.scss');
-    } else if (theme === 'layout_rosepindown_theme') {
-      await import('app/styles/themes/rosepindown.scss');
-    } else if (theme === 'layout_retrocast_theme') {
-      await import('app/styles/themes/retrocast.scss');
-    }
+    const themeImports = {
+      layout_dark_theme: import('app/styles/themes/dark.scss'),
+      layout_light_theme: import('app/styles/themes/light.scss'),
+      layout_purpleish_theme: import('app/styles/themes/purpleish.scss'),
+      layout_olive_theme: import('app/styles/themes/olive.scss'),
+      layout_rosepindown_theme: import('app/styles/themes/rosepindown.scss'),
+      layout_retrocast_theme: import('app/styles/themes/retrocast.scss'),
+    };
+
+    await Promise.all(Object.values(themeImports));
   } catch (error) {
-    console.error('Error importing theme:', error);
+    console.error('Error importing themes:', error);
   }
 };
 
 const useImportThemes = () => {
   const { theme } = useTheme();
-  const loadTheme = useCallback(async () => {
-    await importThemes(theme);
+  const loadThemes = useCallback(async () => {
+    await importThemes();
   }, [theme]);
 
   useEffect(() => {
-    loadTheme();
-  }, [loadTheme]);
+    loadThemes();
+  }, [loadThemes]);
+
   return theme;
 };
 
