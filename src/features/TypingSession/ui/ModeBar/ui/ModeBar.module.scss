@@ -1,0 +1,32 @@
+.wrapper {
+    background: var(--secondary-bg-color);
+    justify-content: center;
+    padding: 5px 15px;
+    border-radius: 6px;
+    font-size: 12px;
+    opacity: 1;
+    transition:
+        opacity 0.3s ease,
+        visibility 0s 0.3s;
+    &.visible {
+        opacity: 0;
+
+        transition:
+            opacity 0.3s ease,
+            visibility 0s;
+    }
+}
+.text_settings {
+    font-size: 16px;
+}
+.icon {
+    padding-right: 6px;
+    font-size: 14px;
+}
+// .wrapper.visible {
+//     opacity: 0;
+
+//     transition:
+//         opacity 0.3s ease,
+//         visibility 0s;
+// }

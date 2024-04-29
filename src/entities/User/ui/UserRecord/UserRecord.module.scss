@@ -1,0 +1,37 @@
+.wrapper {
+    display: flex;
+    gap: 15px;
+    h5 {
+        color: var(--secondary-color) !important;
+    }
+}
+.left_side {
+    width: 50%;
+}
+.right_side {
+    width: 50%;
+}
+.record_block {
+    justify-content: space-between;
+}
+.record_item {
+    padding: 20px;
+    gap: 5px;
+}
+@media screen and (max-width: 800px) {
+    .wrapper {
+        flex-direction: column;
+    }
+    .left_side {
+        width: 100%;
+    }
+    .right_side {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .record_block {
+        flex-wrap: wrap;
+    }
+}

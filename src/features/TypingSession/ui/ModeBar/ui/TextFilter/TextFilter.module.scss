@@ -1,0 +1,25 @@
+.separator {
+    background: var(--third-bg-color);
+    border-radius: 0.5rem;
+    height: auto;
+    margin: 0.1rem 0;
+    width: 0.25rem;
+}
+
+.button {
+    display: flex;
+    align-items: end;
+    gap: 5px;
+}
+.icon {
+    padding-bottom: 1px;
+}
+@media screen and (max-width: 800px) {
+    .wrapper {
+        align-items: center;
+    }
+    .button {
+        width: 80%;
+        justify-content: center;
+    }
+}

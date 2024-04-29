@@ -1,0 +1,53 @@
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    width: 95%;
+    position: relative;
+    transition: 2s;
+}
+.noActionFromUser {
+    filter: blur(5px);
+}
+.return {
+    color: #000 !important;
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    cursor: pointer;
+}
+.return_letter {
+    color: var(--primary-color) !important ;
+    border-bottom: 1px solid var(--primary-color);
+    font-size: 24px !important;
+}
+.typing_input {
+    background: transparent;
+    color: transparent;
+}
+.btn_reload {
+    border-color: transparent;
+    margin-top: 25px;
+}
+.retry_icon {
+    font-size: 22px;
+    text-align: center;
+}
+.inputSessionEnter {
+    opacity: 0;
+}
+
+.inputSessionEnterActive {
+    opacity: 1;
+    transition: opacity 200ms ease-in;
+}
+
+.inputSessionExit {
+    opacity: 1;
+}
+
+.inputSessionExitActive {
+    opacity: 0;
+    transition: opacity 200ms ease-out;
+}

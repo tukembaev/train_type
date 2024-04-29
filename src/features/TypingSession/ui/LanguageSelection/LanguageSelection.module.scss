@@ -1,0 +1,23 @@
+.language_btn {
+    cursor: pointer;
+    &:hover {
+        color: var(--third-color);
+    }
+    .icon {
+        padding-right: 5px;
+        padding-top: 3px;
+    }
+}
+.wrapper {
+    opacity: 1;
+    transition:
+        opacity 0.3s ease,
+        visibility 0s 0.3s;
+    &.visible {
+        opacity: 0;
+
+        transition:
+            opacity 0.3s ease,
+            visibility 0s;
+    }
+}

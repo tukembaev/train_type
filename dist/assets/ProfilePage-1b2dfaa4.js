@@ -1,0 +1,1 @@
+import{r,j as s,d as e,U as a,K as o,N as t,O as p}from"./index-f83965a3.js";const c="ProfilePage-module__wrapper__xxaOy",x={wrapper:c},i=()=>s.jsxs("div",{className:e(x.wrapper,{},[]),children:[s.jsx(a,{}),s.jsx(o,{}),s.jsx(t,{}),s.jsx(p,{})]}),m=r.memo(i);export{m as default};

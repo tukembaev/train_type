@@ -1,0 +1,67 @@
+@import 'reset';
+
+html {
+    scroll-behavior: smooth;
+}
+
+#root {
+    height: 100%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+*::-webkit-scrollbar {
+    width: 6px;
+    height: px;
+}
+
+*::-webkit-scrollbar-thumb {
+    background: var(--primary-bg-color);
+    border-radius: 0px;
+
+    box-shadow: none;
+
+    border-radius: 6px;
+}
+*::-webkit-scrollbar-track {
+    border-radius: 0px;
+    background: var(--secondary-bg-color);
+}
+body {
+    font-weight: 400;
+    font-family: var(--font-family-main);
+
+    @keyframes shimmer {
+        0% {
+            background-position: -1000%;
+        }
+        100% {
+            background-position: 1000%;
+        }
+    }
+    .input-session {
+        transition: all 0.3s ease; /* Пример настройки CSS-перехода */
+    }
+
+    .input-session-enter {
+        opacity: 0;
+        transform: translateY(
+            -20px
+        ); /* Пример начальных стилей при появлении */
+    }
+
+    .input-session-enter-active {
+        opacity: 1;
+        transform: translateY(0); /* Конечные стили при появлении */
+    }
+
+    .input-session-exit {
+        opacity: 1;
+        transform: translateY(0); /* Начальные стили при скрытии */
+    }
+
+    .input-session-exit-active {
+        opacity: 0;
+        transform: translateY(-20px); /* Конечные стили при скрытии */
+    }
+}

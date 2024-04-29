@@ -1,0 +1,165 @@
+.wrapper {
+    height: 95px;
+    overflow-y: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+// .wrapper {
+//     position: relative;
+// }
+
+// .wrapper > * {
+//     position: relative;
+//     bottom: 34px; /* Сдвигаем содержимое вниз на 34 пикселя */
+// }
+
+.caretWrapper {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    word-wrap: break-word;
+
+    text-align: left;
+}
+.typing_input {
+    z-index: 10;
+    position: absolute;
+    background: transparent;
+    border: none;
+    outline: none;
+    width: 100%;
+    height: 100%;
+    color: transparent;
+    font-size: 1.5rem;
+
+    &:focus {
+        outline: none;
+    }
+    &:caret {
+        width: 8px; /* Установите желаемую ширину */
+        color: transparent; /* (Необязательно) Установите цвет */
+    }
+}
+
+.zen_input {
+    z-index: 10;
+
+    background: transparent;
+    border: none;
+    overflow: hidden;
+    resize: none;
+    outline: none;
+    width: 100%;
+    height: 95px;
+    color: var(--secondary-color) !important;
+    font-size: 1.5rem;
+
+    &:focus {
+        outline: none;
+    }
+    &:caret {
+        width: 8px; /* Установите желаемую ширину */
+        color: black; /* (Необязательно) Установите цвет */
+    }
+}
+
+.words_counter {
+    text-align: left;
+    font-weight: 400;
+    opacity: 1;
+    transition:
+        opacity 0.5s ease,
+        visibility 0s 0.9s;
+    &.visible {
+        opacity: 0;
+        /* После окончания анимации устанавливаем visibility в hidden */
+        transition:
+            opacity 0.5s ease,
+            visibility 0s;
+    }
+}
+// .words_counter.visible {
+//     opacity: 0;
+//     /* После окончания анимации устанавливаем visibility в hidden */
+//     transition:
+//         opacity 0.5s ease,
+//         visibility 0s;
+// }
+
+.lettersWrapper {
+    display: flex;
+}
+
+.custom_caret {
+    position: relative;
+}
+
+.custom_caret::after {
+    content: '';
+    position: absolute;
+    width: 2.5px; /* Ширина каретки */
+    height: 1.5rem; /* Высота каретки */
+    background-color: var(--primary-color); /* Цвет каретки */
+    // animation: slideInFromLeft 0.3s ease-in-out; /* Анимация сдвига влево */
+    animation: blink 1.5s ease-out infinite;
+    border-radius: 15px;
+
+    bottom: 0;
+    margin-left: 6px;
+
+    right: 0;
+}
+.custom_caret_left {
+    position: relative;
+}
+
+.custom_caret_left::after {
+    content: '';
+    position: absolute;
+    width: 2px; /* Ширина каретки */
+    height: 1.5rem; /* Высота каретки */
+    background-color: var(--primary-color); /* Цвет каретки */
+    animation: blink 1.5s forwards infinite;
+
+    transition: blink; /* Анимация мигания */
+    bottom: 0;
+    margin-bottom: 7px;
+
+    left: 0;
+}
+
+.caret {
+    height: 22px;
+    width: 2px;
+    background: var(--primary-color);
+
+    position: absolute;
+}
+.textOverlay {
+    max-width: 100%;
+}
+
+@keyframes slideInFromLeft {
+    0% {
+        transform: translateX(-100%);
+        opacity: 0.1;
+    }
+    50% {
+        transform: translateX(-50%);
+        opacity: 0.5;
+    }
+
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+@keyframes blink {
+    0% {
+        opacity: 0.2;
+    }
+    100% {
+        opacity: 1;
+    }
+}

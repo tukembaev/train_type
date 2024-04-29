@@ -1,0 +1,17 @@
+.wrapper {
+    gap: 25px;
+}
+.actions {
+    gap: 25px;
+    justify-content: center;
+}
+.icon {
+    cursor: pointer;
+    color: var(--secondary-color);
+    font-size: 18px;
+    transition: 0.5s;
+    padding-bottom: 2px;
+    &:hover {
+        color: var(--third-color);
+    }
+}

@@ -1,0 +1,25 @@
+.inputSessionEnter {
+    opacity: 0;
+    transform: scale(0.99);
+}
+
+.inputSessionEnterActive {
+    opacity: 1;
+    transform: scale(1);
+    transition:
+        opacity 0.2s ease,
+        transform 0.2s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.inputSessionExit {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.inputSessionExitActive {
+    opacity: 0;
+    transform: scale(0.99);
+    transition:
+        opacity 0.2s ease,
+        transform 0.2s cubic-bezier(0.165, 0.84, 0.44, 1);
+}

@@ -1,0 +1,27 @@
+.wrapper {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); // 3 столбца с одинаковой шириной
+    justify-content: center;
+    gap: 25px;
+}
+
+.statistic_item {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 100%;
+    h5 {
+        color: var(--secondary-color) !important;
+    }
+}
+@media screen and (max-width: 550px) {
+    .wrapper {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+    }
+    .statistic_item {
+        align-items: flex-start;
+        gap: 5px;
+    }
+}

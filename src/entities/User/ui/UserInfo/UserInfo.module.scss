@@ -1,0 +1,77 @@
+.username {
+    text-align: left;
+    margin: auto;
+    span {
+        font-size: 12px;
+    }
+}
+.overall_statistic {
+    width: 25%;
+    text-align: left;
+    gap: 0;
+}
+.level_progress {
+    padding-left: 25px;
+    align-items: center;
+    span {
+        cursor: pointer;
+        font-size: 12px;
+    }
+    h4 {
+        cursor: pointer;
+    }
+}
+.bio {
+    gap: 0;
+
+    text-align: left;
+    justify-content: space-between;
+    padding: 10px 5px;
+    width: 40%;
+    p {
+        color: var(--third-color);
+    }
+}
+.actions {
+    gap: 0;
+
+    justify-content: space-between;
+    padding: 10px 0;
+    width: 3%;
+}
+.icon {
+    cursor: pointer;
+
+    font-size: 22px;
+}
+.separator {
+    background: var(--third-bg-color);
+    border-radius: 0.5rem;
+    height: auto;
+    margin: 0.8rem 0;
+    width: 0.5rem;
+}
+@media screen and (max-width: 800px) {
+    .wrapper {
+        flex-direction: column;
+    }
+    .level_progress {
+        margin: 0 auto;
+    }
+    .username {
+        text-align: left;
+        margin: 0;
+    }
+    .bio {
+        width: 100%;
+    }
+    .overall_statistic {
+        width: 100%;
+    }
+    .actions {
+        width: 100%;
+        padding: 10px 25px;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+}

@@ -1,0 +1,41 @@
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding: 25px;
+}
+
+.input {
+    padding: 8px 10px 65px 8px;
+
+    background: var(--secondary-bg-color);
+    color: var(--third-color);
+    border: none;
+    outline: none;
+    border-radius: 8px;
+    transition: border-color 0.2s ease;
+}
+
+.input:focus-visible {
+    box-shadow:
+        0 0 0 0.1rem var(--primary-bg-color),
+        0 0 0 0.2rem var(--third-color);
+}
+
+.description {
+    font-size: 13px;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.error_message {
+    padding-top: 5px;
+    color: rgba(255, 0, 0, 0.72) !important;
+}
+.error_detected {
+    border-left: 8px solid rgba(255, 0, 0, 0.72);
+    box-shadow:
+        0 0 0 0.1rem var(--primary-bg-color),
+        0 0 0 0.2rem rgba(255, 0, 0, 0.72);
+}

@@ -1,0 +1,27 @@
+.block {
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.bg {
+    background-color: var(--secondary-bg-color);
+    color: var(--secondary-color);
+    border-radius: 0.5rem;
+}
+
+.flex_row10 {
+    display: flex;
+    gap: 10px;
+}
+.flex_column10 {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.hover {
+    &:hover {
+        transition: 0.3s;
+        background: var(--secondary-color);
+        color: var(--third-color);
+    }
+}

@@ -1,0 +1,84 @@
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 45px;
+    padding: 25px;
+    font-weight: 400;
+}
+.bio {
+    max-width: 600px;
+    margin: 0 auto;
+    color: var(--secondary-color) !important;
+}
+.about_cards_wrapper {
+    display: flex;
+    margin: 0 auto;
+    width: 90%;
+    justify-content: space-between;
+}
+.about_card {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    h5 {
+        color: var(--secondary-color);
+    }
+    h1 {
+        color: var(--third-color);
+        font-weight: 400;
+    }
+}
+.about_me_section {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    text-align: left;
+    h4,
+    h2 {
+        color: var(--secondary-color);
+        font-weight: 400;
+    }
+    p {
+        color: var(--third-color);
+    }
+}
+.contact_buttons {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+}
+.skills_wrapper {
+    display: flex;
+    gap: 25px;
+    flex-wrap: wrap;
+    .skill_card {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+    }
+}
+
+.contact_btn {
+    width: 30%;
+    padding: 2rem 0;
+    font-size: 28px;
+    a {
+        list-style: none;
+    }
+    .icon {
+        padding-top: 6px;
+        padding-right: 10px;
+    }
+}
+@media screen and (max-width: 550px) {
+    .about_cards_wrapper {
+        flex-direction: column;
+        gap: 20px;
+    }
+    .contact_buttons {
+        flex-direction: column;
+    }
+    .contact_btn {
+        width: 100%;
+    }
+}

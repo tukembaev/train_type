@@ -1,0 +1,15 @@
+.wrapper {
+    gap: 15px;
+}
+.top {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+.bottom {
+    justify-content: space-between;
+}
+.stat_block {
+    text-align: left;
+    cursor: pointer;
+}

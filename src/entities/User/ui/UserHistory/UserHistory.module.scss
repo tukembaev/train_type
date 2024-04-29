@@ -1,0 +1,73 @@
+.wrapper {
+    height: 98%;
+}
+.table_wrapper {
+    font-size: 12px;
+    width: 100%; /* Adjust width as needed */
+    margin: 0 auto; /* Center the table horizontally */
+    border-collapse: collapse;
+}
+
+.table_header {
+    background-color: var(--primary-bg-color);
+    color: var(--third-color);
+
+    top: 0; /* Фиксировать шапку таблицы наверху */
+    z-index: 2;
+}
+.table_row {
+    background-color: var(--primary-bg-color);
+    height: 40px;
+}
+.table_header_cell {
+    padding: 0.5rem;
+    text-align: left;
+    font-weight: 400;
+    font-size: 0.75rem;
+    color: var(--secondary-color);
+}
+.table_cell {
+    padding: 0.5rem;
+    text-align: left;
+
+    font-weight: 400;
+    font-size: 16px;
+}
+.icon {
+    cursor: pointer;
+    font-size: 16px;
+}
+.even {
+    background-color: var(--secondary-bg-color);
+}
+
+.first_left_cell {
+    text-align: center;
+    border-top-left-radius: 6px;
+    border-bottom-left-radius: 6px;
+}
+
+.last_right_cell {
+    border-top-right-radius: 6px;
+    border-bottom-right-radius: 6px;
+    max-width: 90px;
+}
+
+.table_body {
+    color: var(--third-color);
+
+    font-size: 12px;
+}
+
+.avatar {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+}
+.divide {
+    word-break: break-all; // Это свойство разрешает переносить слова на символах, отличных от пробелов
+}
+.load_more_btn {
+    margin-top: 15px;
+}
