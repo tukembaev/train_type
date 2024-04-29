@@ -1,40 +1,40 @@
 .wrapper {
-    h4 {
-        color: var(--third-color);
-    }
+  h4 {
+    color: var(--third-color);
+  }
 }
 .input {
-    padding: 8px 10px;
-    background: var(--secondary-bg-color);
-    color: var(--third-color);
-    border: none;
-    outline: none;
-    border-radius: 8px;
-    transition: border-color 0.2s ease;
+  padding: 8px 10px;
+  background: var(--secondary-bg-color);
+  color: var(--third-color);
+  border: none;
+  outline: none;
+  border-radius: 8px;
+  transition: border-color 0.2s ease;
 }
 
 .input:focus-visible {
-    box-shadow:
-        0 0 0 0.1rem var(--primary-bg-color),
-        0 0 0 0.2rem var(--third-color);
+  box-shadow:
+    0 0 0 0.1rem var(--primary-bg-color),
+    0 0 0 0.2rem var(--third-color);
 }
 
 .description {
-    font-size: 13px;
-    text-align: left;
+  font-size: 13px;
+  text-align: left;
 }
 .error_message {
-    padding-top: 5px;
-    color: rgba(255, 0, 0, 0.72) !important;
+  padding-top: 5px;
+  color: rgba(255, 0, 0, 0.72) !important;
 }
 .error_detected {
-    border-left: 8px solid rgba(255, 0, 0, 0.72);
-    box-shadow:
-        0 0 0 0.1rem var(--primary-bg-color),
-        0 0 0 0.2rem rgba(255, 0, 0, 0.72);
+  border-left: 8px solid rgba(255, 0, 0, 0.72);
+  box-shadow:
+    0 0 0 0.1rem var(--primary-bg-color),
+    0 0 0 0.2rem rgba(255, 0, 0, 0.72);
 }
 @media screen and (max-width: 800px) {
-    .wrapper {
-        width: 100%;
-    }
+  .wrapper {
+    width: 100%;
+  }
 }
