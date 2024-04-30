@@ -15,7 +15,7 @@ const ModeBar: FC = () => {
   const isStarted = useAppSelector(getText);
   const [openTextSetting, setOpenTextSetting] = useState(false);
 
-  const { isPC, isTable, isMobile } = useWindowSize();
+  const { isTable, isMobile } = useWindowSize();
 
   return (
     <Block
