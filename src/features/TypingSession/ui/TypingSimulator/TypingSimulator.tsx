@@ -101,14 +101,13 @@ const TypingSimulator: FC = () => {
     });
 
     filtredSessionText = wordsArray.join(" ");
-    console.log(filtredSessionText);
   }
 
   const text = useMemo<string[]>(
     () => Array.from(filtredSessionText || " "),
     [sessionText, currentFilter]
   );
-  debugger;
+
   const sessionData: sessionData = {
     mode: currentMode,
     duration: currentDuration,
