@@ -110,7 +110,7 @@ const EditUser: FC<EditUserProps> = ({ closeEditUser }) => {
           theme={ButtonTheme.BACKGROUND}
           disabled={isSubmitting}
         >
-          Sign Up
+          Upload information
         </Button>
         <h3 style={{ textAlign: "center" }}>
           Development in progress , stay in tune <br /> Will be available in
