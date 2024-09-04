@@ -9,7 +9,7 @@ import {
 import { InfinitySpin } from "react-loader-spinner";
 
 interface LeaderBoardProps {
-  update: boolean;
+  update?: boolean;
 }
 const LeaderBoard: FC<LeaderBoardProps> = ({ update }) => {
   const { data, isLoading, refetch } = useGetLeaderBoardDataByModeQuery("", {

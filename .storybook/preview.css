@@ -1,0 +1,5 @@
+.wrapper {
+  background-color: var(--light-light);
+  font-family: var(--font-family-main);
+  width: 100%;
+}
