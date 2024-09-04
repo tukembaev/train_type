@@ -1,4 +1,5 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
+import { generateSessionText } from 'features/TypingSession/ui/TypingSimulator/ui/InputSession/functions/generateSessionText';
 import { $api } from 'shared/api/api';
 import { generateRandomNumber } from 'shared/lib/functions/typingFunctions/generateRandomNumber';
 
@@ -25,13 +26,7 @@ export const typingAPI = createApi({
                 if (!localStorage.getItem(`words_${arg[0]}`)) {
                     localStorage.setItem(`words_${arg[0]}`, JSON.stringify(baseQueryReturnValue.words));
                 }
-                const result = []
-                for (let i = 0; i < +arg[1]; i+=1) {
-                    const randomIndex = Math.floor(Math.random() * baseQueryReturnValue.words.length);
-                    const randomWord = baseQueryReturnValue.words[randomIndex];
-                    result.push(randomWord)
-                }   
-                return result.join(' ');
+                return generateSessionText(+arg[1] ,baseQueryReturnValue.words)
             },
         }),
         getQuoteText: builder.query<string, string[]>({

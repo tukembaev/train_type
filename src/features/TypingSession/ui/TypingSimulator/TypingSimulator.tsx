@@ -27,6 +27,7 @@ import {
 import { generateRandomNumber } from "shared/lib/functions/typingFunctions/generateRandomNumber";
 import cls from "./TypingSimulator.module.scss";
 import InputSession from "./ui/InputSession/InputSession";
+import { InfinitySpin } from "react-loader-spinner";
 
 const TypingSimulator: FC = () => {
   const currentMode = useAppSelector(getMode);
@@ -63,6 +64,7 @@ const TypingSimulator: FC = () => {
       dispatch(clearGraphData());
       dispatch(setErrorsCount(0));
     }
+
     resetTimer();
   }, [refetch, resetTimer, dispatch, letterInsert]);
 
@@ -103,7 +105,7 @@ const TypingSimulator: FC = () => {
     filtredSessionText = wordsArray.join(" ");
   }
 
-  const text = useMemo<string[]>(
+  let text: any = useMemo<string[]>(
     () => Array.from(filtredSessionText || " "),
     [sessionText, currentFilter]
   );
@@ -115,6 +117,13 @@ const TypingSimulator: FC = () => {
     textOfSession: text,
   };
 
+  const inputElement = document.getElementById(
+    "typing-input"
+  ) as HTMLInputElement;
+  if (inputElement) {
+    inputElement.focus();
+  }
+
   useEffect(() => {
     resetTimer();
   }, [letterInsert, currentMode]);
@@ -124,8 +133,10 @@ const TypingSimulator: FC = () => {
 
   return (
     <div className={classNames(cls.wrapper, {}, [])}>
-      <div className={isFinish ? cls.noActionFromUser : undefined}>
-        <div>
+      <div
+        className={isFinish && letterInsert ? cls.noActionFromUser : undefined}
+      >
+        <div style={{ display: "flex", flexDirection: "column" }}>
           <SwitchTransition>
             <CSSTransition
               key={currentMode}
@@ -137,11 +148,17 @@ const TypingSimulator: FC = () => {
                 exitActive: cls.inputSessionExitActive,
               }}
             >
-              <InputSession
-                key={currentMode}
-                data={sessionData}
-                isNoAction={isFinish}
-              />
+              {text ? (
+                <InputSession
+                  key={currentMode}
+                  data={sessionData}
+                  isNoAction={isFinish}
+                />
+              ) : (
+                <div className={cls.loading}>
+                  <InfinitySpin color="var(--primary-color)" />
+                </div>
+              )}
             </CSSTransition>
           </SwitchTransition>
           <Button
@@ -160,7 +177,7 @@ const TypingSimulator: FC = () => {
           </Button>
         </div>
       </div>
-      {isFinish ? (
+      {isFinish && letterInsert ? (
         <div>
           <p className={cls.return} onClick={resetTimer}>
             Click to return or{" "}
