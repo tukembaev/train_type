@@ -31,7 +31,6 @@ import {
 import { useStopWatch } from "shared/lib/hooks/useStopWatch/useStopWatch";
 import cls from "./InputSession.module.scss";
 import { countWordsPerLine } from "./functions/countWordsPerLine";
-import { Skeleton } from "shared/ui/Skeleton/Skeleton";
 
 interface InputSessionProps {
   data: sessionData;
