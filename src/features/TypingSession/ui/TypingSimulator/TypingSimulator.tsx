@@ -52,7 +52,7 @@ const TypingSimulator: FC = () => {
     (currentMode === "words" || currentMode === "quote") &&
     currentDuration?.toString();
 
-  const { data: sessionText, refetch } = queryHook([
+  const { data: sessionText, refetch , isLoading } = queryHook([
     currentLanguage,
     queryDuration || "100",
   ]);
@@ -148,7 +148,7 @@ const TypingSimulator: FC = () => {
                 exitActive: cls.inputSessionExitActive,
               }}
             >
-              {text ? (
+              {!isLoading ? (
                 <InputSession
                   key={currentMode}
                   data={sessionData}
